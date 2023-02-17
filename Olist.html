@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Project Name</title>
+		<title>Olist - E-commerce optimization</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -14,14 +14,14 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Project Name</a>
+						<a href="index.html" class="logo">Portfolio</a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
 							<li><a href="index.html">Portfolio</a></li>
-							<li class="active"><a href="generic.html">Project Name</a></li>
+							<li class="active"><a href="generic.html">Olist - E-commerce optimization</a></li>
 						</ul>
 						<ul class="icons">
               <li><a href="https://www.linkedin.com/in/victor-von-eisenhart-rothe/" class="icon brands fa-linkedin"><span class="label">Instagram</span></a></li>
@@ -35,12 +35,33 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>Project name</h1>
-									<p>Description of Project</p>
+									<span class="date">November, 2022</span>
+									<h1>Olist - E-commerce optimization</h1>
+									<p> Have a look at one of my early data analysis kaggle challenges. The goal is to increase the profit margin of an e-commerce platform based on customer and supplier data. </p>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Long description</p>
+								<div class="image main"><img src="images/Olist_heatmap.png" alt="" /></div>
+								<p>This project is based on the <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce">publicly available dataset </a> of the brazilian e-commerce store Olist.
+                  The goal of the project is to explore the dataset and imrpove revenue by providing data-driven suggestions to the company.
+                  As part of the project, I preprocessed the data, stored it in accessible tables.
+                  Consequently, I conducted exploratory analyses, regression analyses on the most influential factors for negative reviews and
+                  worked out actionable suggestions for the company with calculatable profit margin improvements.
+                  The main insights generated in this process are as follows:<br>
+                  <ul></ul>
+                  <li> `Wait_time` is the most significant factor behind low review scores<br></li>
+                  <li> `Wait_time` is made up of seller's `delay_to_carrier` + `carrier_delivery_time`.<br></li>
+                  <li> The latter being outside of Olist's direct control, improving it is not a quick-win recommendation<br></li>
+                  <li> On the contrary, a better selection of `sellers` can positively impact the `delay_to_carrier` and reduce the number of bad `review_scores` on Olist.<br></li>
+                  <li>Dropping the worst performing 746 sellers from the dataset results in the highest profit margin for Olist, with a profit of ~1.2 million BRL<br></li>
+                  <li> However, the profit increase already starts stagnating when around 200 sellers are dropped.<br></li>
+                  </ul>
+                </p>
+                <a class="image fit"><img src="images/Olist.png" alt="" /></a>
+                <p>
+                  <br>
+                  Considering the generated insights, the main recommendation for Olist is to drop the worst performing 200 sellers from the e-commerce platform.
+                  <br><br>
+                  Thank you for the interest in this project. Feel free to inspect the github repository <a href="https://github.com/Victorvone/Olist-">here</a>.
+                </p>
 							</section>
 
 					</div>
