@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Deployment and automation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Portfolio</a></li>
+							<li class="active"><a href="MLOps.html">Deployment and automation</a></li>
+						</ul>
+						<ul class="icons">
+              <li><a href="https://www.linkedin.com/in/victor-von-eisenhart-rothe/" class="icon brands fa-linkedin"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/Victorvone" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">December, 2022</span>
+									<h1>Deploying a prediction model and automating it's lifecycle</h1>
+									<p>In this project I brought a neural network predicting taxiprices into production through training and storing it via the cloud, automating and monitoring it's lifecycle and making it accessible via API. </p>
+								</header>
+								<div class="image main"><img src="images/MLOps_stack.png" alt="" /></div>
+								<p>The goal of this project was to bring a previously constructed neural network predicting the price of a taxi fare into production.
+                  The project constituted of the following steps:
+                  <ol>
+                    <li>Package the code - Bringing the code from a provided notebook into a python package that
+                      can be ran via command <br>
+                      (e.g. <code> python -m taxifare.interface.main_local </code>).</li>
+                    <li>Implement incremental processing and incremental learning - To circumvent memory and time
+                      constraints, I implemented chunk by chunk preprocessing and partial fitting of the model.
+                    <a class="image fit"><img src="images/IncrementalProcessingFit.png" alt="" /></a>
+                    </li>
+                    <li>Cloud training - Sourcing data from a warehouse using Google Bigquery and training,
+                      evaluating and using the model from a virtual machine using Google Compute Engine. </li>
+                    <li>Automate the model lifecycle - To ensure model reliability over time I used MLflow
+                      to store the trained models and monitor their performance over time in the cloud.
+                      Consequently, I implemented Prefect to automate a workflow that preprocesses new data,
+                      evaluates the performance of the current model on the new data and
+                      trains it on the new data to see how the perfoemance changes.
+
+                    </li>
+                    <li>Deployment - Lastly, I created a Dockerimage, pushed it to Google Cloud Run and built a
+                      prediction API using FastAPI to enable the use of the model via API requests.</li>
+                  </ol>
+                  As this project is part of an official cooperation , I cannot make the whole repository publicly available.
+                  However, I am happy to share with you some excerpts of the code I wrote for it. <br> <br>
+
+                  MLflow and Prefect Code snippets:
+                  <a class="image fit"><img src="images/MLflowPrefectCodeSnippet1.png" alt="" /></a>
+                  <a class="image fit"><img src="images/MLflowPrefectCodeSnippet2.png" alt="" /></a>
+                </p>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+          <section class="split contact">
+            <section class="alt">
+              <div style="display:flex; justify-content: space-between;">
+                <div>
+                  <h3>Location of residence</h3>
+                  <p>Berlin, Germany</p>
+                </div>
+                <div>
+                  <h3>Email</h3>
+                  <p><a href="victorvoneisenhart@gmail.com">victorvoneisenhart@gmail.com</a></p>
+                </div>
+                <div>
+                  <h3>Social</h3>
+                  <ul class="icons alt">
+                    <li><a href="https://www.linkedin.com/in/victor-von-eisenhart-rothe/" class="icon brands fa-linkedin"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://github.com/Victorvone" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                </div>
+              </div>
+            </section>
+        </footer>
+
+      <!-- Copyright -->
+        <div id="copyright">
+          <ul><li>Thanks for your time and interest! </li></ul>
+        </div>
+    </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
