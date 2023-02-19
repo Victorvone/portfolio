@@ -60,14 +60,32 @@
 
                     </li>
                     <li>Deployment - Lastly, I created a Dockerimage, pushed it to Google Cloud Run and built a
-                      prediction API using FastAPI to enable the use of the model via API requests.</li>
+                      prediction API using FastAPI to enable the use of the model via API requests.<br>
+                      Example API request:<br>
+                      ".../predict?pickup_datetime=2013-07-06%2017:18:00<br>
+                      &pickup_longitude=-73.950655<br>
+                      &pickup_latitude=40.783282<br>
+                      &dropoff_longitude=-73.984365<br>
+                      &dropoff_latitude=40.769802<br>
+                      &passenger_count=2"<br><br>
+
+                      Example response:
+                      <a class="image fit"><img src="images/API_response.png" alt="" /></a>
+                    </li>
                   </ol>
-                  As this project is part of an official cooperation , I cannot make the whole repository publicly available.
+                  As this project is part of an official cooperation with an external party, I cannot make the whole repository publicly available.
                   However, I am happy to share with you some excerpts of the code I wrote for it. <br> <br>
 
-                  MLflow and Prefect Code snippets:
+                  Incremental processing and training code excerpt:
+                  <a class="image fit"><img src="images/ChunkPreprocessing.png" alt="" /></a>
+                  <a class="image fit"><img src="images/ChunkTraining.png" alt="" /></a><br>
+
+                  MLflow and Prefect code excerpt:
                   <a class="image fit"><img src="images/MLflowPrefectCodeSnippet1.png" alt="" /></a>
-                  <a class="image fit"><img src="images/MLflowPrefectCodeSnippet2.png" alt="" /></a>
+                  <a class="image fit"><img src="images/MLflowPrefectCodeSnippet2.png" alt="" /></a><br>
+
+                  FastAPI code excerpt:
+                  <a class="image fit"><img src="images/FastAPI.png" alt="" /></a>
                 </p>
 
 							</section>
