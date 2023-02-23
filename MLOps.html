@@ -37,22 +37,21 @@
 								<header class="major">
 									<span class="date">December, 2022</span>
 									<h1>Deploying a prediction model and automating it's lifecycle</h1>
-									<p>In this project I brought a neural network predicting taxiprices into production through training and storing it via the cloud, automating and monitoring it's lifecycle and making it accessible via API. </p>
+									<p>In this project I deployed a neural network predicting taxiprices. This consisted of  training and storing it via the cloud, automating and monitoring it's lifecycle and making it accessible via Docker and FastAPI. </p>
 								</header>
 								<div class="image main"><img src="images/MLOps_stack.png" alt="" /></div>
-								<p>The goal of this project was to bring a previously constructed neural network predicting the price of a taxi fare into production.
+								<p>The goal of this project was to bring a provided neural network predicting the price of a taxi fare into production, being able to train it on a big data set (55M rows) and to automate it’s lifecycle.
                   The project constituted of the following steps:
                   <ol>
-                    <li>Package the code - Bringing the code from a provided notebook into a python package that
-                      can be ran via command <br>
-                      (e.g. <code> python -m taxifare.interface.main_local </code>).</li>
+                    <li>Package the code - mplementing the code of a provided notebook through setting up  a python package that can be ran via command and deployed.
+                    </li>
                     <li>Implement incremental processing and incremental learning - To circumvent memory and time
                       constraints, I implemented chunk by chunk preprocessing and partial fitting of the model.
                     <a class="image fit"><img src="images/IncrementalProcessingFit.png" alt="" /></a>
                     </li>
-                    <li>Cloud training - Sourcing data from a warehouse using Google Bigquery and training,
+                    <li>Cloud training - Sourcing data from a warehouse using Google Bigquery and training as well as
                       evaluating and using the model from a virtual machine using Google Compute Engine. </li>
-                    <li>Automate the model lifecycle - To ensure model reliability over time I used MLflow
+                    <li>Automating the model lifecycle - To ensure reliability over time, I used MLflow
                       to store the trained models and monitor their performance over time in the cloud.
                       Consequently, I implemented Prefect to automate a workflow that preprocesses new data,
                       evaluates the performance of the current model on the new data and
@@ -74,17 +73,33 @@
                     </li>
                   </ol>
                   As this project is part of an official cooperation with an external party, I cannot make the whole repository publicly available.
-                  However, I am happy to share with you some excerpts of the code I wrote for it. <br> <br>
+                  However, I am happy to share with you some excerpts of the code I wrote for it.
+                  <br> <br>
+                  <ul>
+                   <h3>Tech stack</h3>
+                      <li>Python</li>
+                      <li>MLflow</li>
+                      <li>Google Cloud Run</li>
+                      <li>Google Bigquery</li>
+                      <li>Google Compute Engine</li>
+                      <li>Google Prefect</li>
+                      <li>Google Docker</li>
+                      <li>Google FastAPI</li>
+                  </ul>
+                    <br> <br>
 
-                  Incremental processing and training code excerpt:
+                  <h3>Code excerpts</h3>
+                  <br>
+
+                  Incremental processing and training:
                   <a class="image fit"><img src="images/ChunkPreprocessing.png" alt="" /></a>
                   <a class="image fit"><img src="images/ChunkTraining.png" alt="" /></a><br>
 
-                  MLflow and Prefect code excerpt:
+                  MLflow and Prefect:
                   <a class="image fit"><img src="images/MLflowPrefectCodeSnippet1.png" alt="" /></a>
                   <a class="image fit"><img src="images/MLflowPrefectCodeSnippet2.png" alt="" /></a><br>
 
-                  FastAPI code excerpt:
+                  FastAPI:
                   <a class="image fit"><img src="images/FastAPI.png" alt="" /></a>
                 </p>
 
