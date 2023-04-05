@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Braintumorclassification</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+        <header id="header">
+          <a href="index.html" class="logo">Portfolio</a>
+        </header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Portfolio</a></li>
+							<li class="active"><a href="generic.html">Braintumorclassification</a></li>
+						</ul>
+						<ul class="icons">
+              <li><a href="https://www.linkedin.com/in/victor-von-eisenhart-rothe/" class="icon brands fa-linkedin"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/Victorvone" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">March, 2023</span>
+									<h1>Braintumorclassification & Grad-CAM</h1>
+									<p>An approach to explain Convolutional Neural Networks to clinical decision makers</p>
+								</header>
+								<div class="image main"><img src="images/braintumorclassification.png" alt="" /></div>
+								<p>
+
+              <p>Convolutional neural networks have proven to be effective in classifying images in the medical domain. However, the lack of interpretability in these models raises concerns for clinicians who rely on explanations for clinical decision making. This private project aimed to develop an mvp solution by incorporating multiple visualization techniques to improve the interpretability of the model.</p>
+              <h2>Model</h2>
+              <p>The project used transfer-learning to compare several pre-trained models, including VGG16, EfficientNetV2B3, InceptionNet, and GoogleNet. The EfficientNetV2B3 model was selected based on its high accuracy of 97% on the test set and its relatively small size, which was an important metric for the project as the model was version-controlled using MLFlow, which had a limit on upload size.</p>
+              <h2>Explainability</h2>
+              <p>The project incorporated several visualization techniques, including grad-cam, activation visualizations,
+                vanillagrad, and occlusion sensitivity maps, to improve the interpretability of the model.
+                Among these techniques, grad-cam was found to provide the best results in terms of interpretability.
+                <div><center><img src="images/Grad-Cam.png" width="500" height="500" /></center></div>
+                Grad-CAM is a technique used to understand how a convolutional neural network (CNN) makes predictions. It highlights the areas of an image that were most important in making the prediction.
+
+                The technique uses the last layer of the CNN, which contains a set of feature maps. These feature maps highlight different aspects of the image. Grad-CAM computes the importance of each feature map by looking at how much it contributed to the final prediction.
+
+                Grad-CAM computes a heatmap that shows the most important areas of the image for a particular prediction. It works by computing the gradient (or slope) of the prediction for a specific class with respect to each feature map. This gradient gives us an idea of how much each feature map contributed to the prediction. The gradients are then used to compute a weighted sum of the feature maps, resulting in a heatmap that highlights the most important areas of the image for that prediction.</p>
+                <h2>Features Implemented:</h2>
+              <ul>
+                <li>Loading and preprocessing data</li>
+                <li>Initiating and training the model</li>
+                <li>Evaluating and predicting with the model</li>
+                <li>Returning grad-cam explainability images of predictions and other visualization techniques</li>
+                <li>Saving the model in MLFlow or Google Cloud</li>
+                <li>Loading the model from MLFlow or Google Cloud</li>
+                <li>An API to upload images from the frontend and return predictions and grad-cam images</li>
+              </ul>
+              <h2>Tech Stack:</h2>
+              <ul>
+                <li>Tensorflow.keras for the deep learning model</li>
+                <li>Tf-explain for the visualization techniques</li>
+                <li>FastAPI and Uvicorn for the API</li>
+                <li>MLflow for version-controlling the model</li>
+              </ul>
+              <h2>Conclusion:</h2>
+              <p>This private project demonstrates the use of multiple visualization techniques to improve the interpretability of convolutional neural networks for clinical decision making. The EfficientNetV2B3 model was found to be the best trade-off between accuracy and model size, and grad-cam was found to provide the best results in terms of interpretability. The project also demonstrates the use of modern technologies such as FastAPI, Uvicorn, and MLflow for building and version-controlling deep learning models.</p>
+                </p>
+              <h2>Open Source:</h2>
+              <p>This project is public, feel free to inspect the corresponding <a href="https://github.com/Victorvone/MNIST">git repository</a>.
+							  </p>
+              </section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+          <section class="split contact">
+            <section class="alt">
+              <div style="display:flex; justify-content: space-between;">
+                <div>
+                  <h3>Location of residence</h3>
+                  <p>Berlin, Germany</p>
+                </div>
+                <div>
+                  <h3>Email</h3>
+                  <p><a href="victorvoneisenhart@gmail.com">victorvoneisenhart@gmail.com</a></p>
+                </div>
+                <div>
+                  <h3>Social</h3>
+                  <ul class="icons alt">
+                    <li><a href="https://www.linkedin.com/in/victor-von-eisenhart-rothe/" class="icon brands fa-linkedin"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://github.com/Victorvone" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                </div>
+              </div>
+            </section>
+        </footer>
+
+      <!-- Copyright -->
+        <div id="copyright">
+          <ul><li>Thanks for your time and interest! </li></ul>
+        </div>
+    </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
